@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b6d7q075wtmj"]
+
+[ext_resource type="Texture2D" uid="uid://bg1euunaxkntg" path="res://Universal_Assets/icon.svg" id="1_gjnuf"]
+[ext_resource type="Script" uid="uid://cd45sabrjjwkh" path="res://Character_Meshes/Player_Character/Scripts/ability_display.gd" id="1_nss2a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjnuf"]
+bg_color = Color(0.20152655, 0.20152661, 0.20152646, 1)
+corner_radius_top_left = 120
+corner_radius_bottom_right = 120
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nss2a"]
+bg_color = Color(0.80049086, 0.8004908, 0.8004906, 1)
+corner_radius_top_left = 120
+corner_radius_bottom_right = 120
+
+[node name="AbilityDisplay" type="VBoxContainer" unique_id=1905842034]
+offset_right = 32.0
+offset_bottom = 35.0
+theme_override_constants/separation = 1
+script = ExtResource("1_nss2a")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1456530495]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("1_gjnuf")
+expand_mode = 1
+
+[node name="DurabilityBar" type="ProgressBar" parent="." unique_id=2024542268]
+custom_minimum_size = Vector2(0, 2.15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_gjnuf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nss2a")
+show_percentage = false

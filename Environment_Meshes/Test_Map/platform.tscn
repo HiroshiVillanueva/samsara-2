@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dkixr1wayv36w"]
+
+[ext_resource type="PackedScene" uid="uid://pmkonq7gixcm" path="res://Environment_Meshes/Test_Map/Platform.glb" id="1_rl0eo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl0eo"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+blend_mode = 2
+albedo_color = Color(0.581033, 0.58103293, 0.5810329, 1)
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.7919991, 0.79199916, 0.7919991, 1)
+emission_energy_multiplier = 16.0
+shadow_to_opacity = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rl0eo"]
+size = Vector3(162.565, 0.13, 162.565)
+
+[node name="Platform" unique_id=1962483404 instance=ExtResource("1_rl0eo")]
+
+[node name="Cube" parent="." index="0" unique_id=1999822920]
+surface_material_override/0 = SubResource("StandardMaterial3D_rl0eo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=2087244134]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1931748198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.722046e-06, 0)
+shape = SubResource("BoxShape3D_rl0eo")

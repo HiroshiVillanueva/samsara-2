@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ddsbiqupk6cnj"]
+
+[ext_resource type="Script" uid="uid://jt8rb0vlwx86" path="res://Character_Meshes/Player_Character/Abilities/grenade.gd" id="1_srsqt"]
+[ext_resource type="PackedScene" uid="uid://cl82y5gxnb8d6" path="res://assets/BinbunVFX/impact_explosions/effects/explosion/vfx_explosion_04.tscn" id="2_1hmhd"]
+[ext_resource type="PackedScene" uid="uid://shl0iw1x775r" path="res://assets/BinbunVFX/impact_explosions/effects/explosion/vfx_explosion_05.tscn" id="3_6hq78"]
+[ext_resource type="PackedScene" uid="uid://bjru1p8jhdp1b" path="res://assets/BinbunVFX/impact_explosions/effects/explosion/vfx_explosion_06.tscn" id="4_6wgc4"]
+[ext_resource type="PackedScene" uid="uid://clyd6ui11twpf" path="res://assets/BinbunVFX/fire_effects/effects/Fire/fire_08.tscn" id="4_jkwx1"]
+[ext_resource type="PackedScene" uid="uid://cdvba068ikbqd" path="res://assets/BinbunVFX/smoke_effects/effects/smoke_thin/smoke_thin_vfx_08.tscn" id="5_x2sqy"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4q05e"]
+height = 2.6230469
+radius = 2.5
+
+[node name="Grenade" type="Node3D" unique_id=922239814]
+script = ExtResource("1_srsqt")
+impact_scene = Array[PackedScene]([ExtResource("2_1hmhd"), ExtResource("3_6hq78"), ExtResource("4_6wgc4")])
+
+[node name="MeshInstance3D" parent="." unique_id=1620722351 instance=ExtResource("4_jkwx1")]
+
+[node name="SmokeThinVFX_08" parent="MeshInstance3D" unique_id=1468727261 instance=ExtResource("5_x2sqy")]
+fake_shadows = false
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1619178893]
+collision_layer = 0
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1542925541]
+shape = SubResource("CylinderShape3D_4q05e")

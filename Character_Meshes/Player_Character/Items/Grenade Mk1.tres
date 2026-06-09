@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GrenadeItemData" format=3 uid="uid://b5p5ileoci1rc"]
+
+[ext_resource type="Texture2D" uid="uid://bg1euunaxkntg" path="res://Universal_Assets/icon.svg" id="1_wlcvp"]
+[ext_resource type="Script" uid="uid://bq66yf3pu0o3k" path="res://Character_Meshes/Player_Character/Inventory/Item_Grenade_data.gd" id="1_xlqqv"]
+
+[resource]
+script = ExtResource("1_xlqqv")
+bonus_has_grenade_unlocked_bool = true
+item_name = "MK 1 Grenade"
+description = "Testing the new grenades"
+icon = ExtResource("1_wlcvp")
+category = 2
+durability_trigger = 4
+randomize_stats = true
+base_durability = 20
+metadata/_custom_type_script = "uid://bq66yf3pu0o3k"

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://b24i0141kl68u"]
+
+[ext_resource type="Script" uid="uid://p2y56gt67u7i" path="res://Character_Meshes/Player_Character/Scripts/tracer_vfx.gd" id="1_meo7k"]
+[ext_resource type="Shader" uid="uid://bc82y4ou2qdvr" path="res://assets/Beams/TracerVFX.gdshader" id="5_wyuxf"]
+[ext_resource type="PackedScene" uid="uid://c4jq7s82wru52" path="res://assets/BinbunVFX_Vol2/ElementalMagicFX/effects/projectile/vfx_fire_projectile_01.tscn" id="6_tyae8"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_os6ph"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wyuxf"]
+noise = SubResource("FastNoiseLite_os6ph")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyae8"]
+render_priority = 2
+shader = ExtResource("5_wyuxf")
+shader_parameter/noise = SubResource("NoiseTexture2D_wyuxf")
+shader_parameter/gradientRemap = Vector4(1.028, -1.193, 0, 0.264)
+shader_parameter/beamRemap = Vector4(0.404, 3.19, 1, 200.07)
+shader_parameter/color1 = Color(0, 0, 0, 0)
+shader_parameter/color2 = Color(2.2621452e-06, 0.8800688, 0.20835155, 1)
+shader_parameter/scale = Vector3(10.19, 50, -1.795)
+shader_parameter/master_alpha = 1.0
+shader_parameter/threshold = 7.203
+shader_parameter/offset = 2.415
+shader_parameter/glow_strength = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0sjpn"]
+material = SubResource("ShaderMaterial_tyae8")
+size = Vector2(3, 3)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wyuxf"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dkrj0"]
+noise = SubResource("FastNoiseLite_wyuxf")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ui0d5"]
+render_priority = 1
+shader = ExtResource("5_wyuxf")
+shader_parameter/noise = SubResource("NoiseTexture2D_dkrj0")
+shader_parameter/gradientRemap = Vector4(1.028, -1.193, 0, 0.264)
+shader_parameter/beamRemap = Vector4(0.404, 3.19, 1, 200.07)
+shader_parameter/color1 = Color(0, 0, 0, 0)
+shader_parameter/color2 = Color(0, 0, 0, 1)
+shader_parameter/scale = Vector3(10.065, 50, -1.795)
+shader_parameter/master_alpha = 1.0
+shader_parameter/threshold = 7.203
+shader_parameter/offset = 2.415
+shader_parameter/glow_strength = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t5sxa"]
+material = SubResource("ShaderMaterial_ui0d5")
+size = Vector2(3.08, 4)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0sjpn"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_os6ph"]
+noise = SubResource("FastNoiseLite_0sjpn")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wyuxf"]
+render_priority = 3
+shader = ExtResource("5_wyuxf")
+shader_parameter/noise = SubResource("NoiseTexture2D_os6ph")
+shader_parameter/gradientRemap = Vector4(1.028, -1.193, 0, 0.264)
+shader_parameter/beamRemap = Vector4(0.404, 3.19, 1, 197.87)
+shader_parameter/color1 = Color(0, 0, 0, 0)
+shader_parameter/color2 = Color(1, 1, 1, 1)
+shader_parameter/scale = Vector3(3, 50, -2.585)
+shader_parameter/master_alpha = 1.0
+shader_parameter/threshold = 3.108
+shader_parameter/offset = 2.415
+shader_parameter/glow_strength = 5.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tyae8"]
+material = SubResource("ShaderMaterial_wyuxf")
+size = Vector2(3, 3)
+
+[node name="Node3D" type="Node3D" unique_id=2112204670]
+script = ExtResource("1_meo7k")
+fake_speed = 70.0
+trail_linger_time = 5.0
+spawn_offset = 2.5
+
+[node name="MeshInstance3D" parent="." unique_id=1245201508 instance=ExtResource("6_tyae8")]
+transform = Transform3D(-6.207017e-08, 0, 1.42, 0, 1.42, 0, -1.42, 0, -6.207017e-08, 0, 0.07598877, -0.6078415)
+
+[node name="TrailPivot" type="Node3D" parent="." unique_id=1485771885]
+
+[node name="TrailMesh" type="MeshInstance3D" parent="TrailPivot" unique_id=1759833832]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, -0.55)
+mesh = SubResource("PlaneMesh_0sjpn")
+
+[node name="TrailMesh2" type="MeshInstance3D" parent="TrailPivot" unique_id=1921805100]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, -0.028, -0.55)
+mesh = SubResource("PlaneMesh_t5sxa")
+
+[node name="TrailMesh3" type="MeshInstance3D" parent="TrailPivot" unique_id=2032702656]
+transform = Transform3D(-4.371138e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, -4.371138e-08, 0, 0.02368164, -0.55)
+mesh = SubResource("PlaneMesh_tyae8")

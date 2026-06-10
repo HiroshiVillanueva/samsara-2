@@ -13,7 +13,7 @@ config_version=5
 config/name="Samsara2"
 run/main_scene="uid://bht5xvf8q5kg5"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://Universal_Assets/icon.svg"
+config/icon="res://common/miscellaneous_assets/icon.svg"
 
 [autoload]
 

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="GunItemData" format=3 uid="uid://263ndef4t4f2"]
+
+[ext_resource type="Texture2D" uid="uid://ckdww8xgs3lus" path="res://items/art/Shotgun.png" id="1_ofita"]
+[ext_resource type="Script" uid="uid://x5ha585mx46c" path="res://items/scripts/template_gun_data.gd" id="2_11i15"]
+
+[resource]
+script = ExtResource("2_11i15")
+bonus_max_ammo = -10
+bonus_max_ammo_bool = true
+bonus_fire_mode_bool = true
+bonus_muzzleType = 1
+bonus_muzzleType_bool = true
+bonus_projectiles_per_shot = 5
+bonus_projectiles_per_shot_bool = true
+bonus_fire_rate = -0.1
+bonus_fire_rate_bool = true
+bonus_hitscan_range = -5.0
+bonus_hitscan_range_bool = true
+item_name = "Shotgun"
+description = "A compact, lightweight Personal Defense Weapon (PDW) designed by FN Herstal in Belgium.
+
+Art stolen from Fortnite."
+icon = ExtResource("1_ofita")
+category = 1
+durability_trigger = 2
+randomize_stats = true
+base_durability = 67
+stat_variance = 0.1
+metadata/_custom_type_script = "uid://x5ha585mx46c"

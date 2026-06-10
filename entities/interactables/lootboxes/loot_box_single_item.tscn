@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dcnix4r50pdi3"]
+
+[ext_resource type="PackedScene" uid="uid://doj4jomx3h34p" path="res://VFX/BinbunVFX/loot_effects/effects/ground/ground_loot_vfx_common.tscn" id="1_hyj10"]
+[ext_resource type="Script" uid="uid://d38orih8d2pvo" path="res://entities/interactables/lootboxes/loot_box_single_item.gd" id="2_npnh2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_npnh2"]
+radius = 5.8
+
+[node name="PickupItem" type="Area3D" unique_id=585344216]
+script = ExtResource("2_npnh2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1153860580]
+shape = SubResource("SphereShape3D_npnh2")
+
+[node name="GroundLootVFX_Common" parent="." unique_id=2071615077 instance=ExtResource("1_hyj10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="GunItemData" format=3 uid="uid://doev6wtuwu0da"]
+
+[ext_resource type="Texture2D" uid="uid://b6ptsrom4weqc" path="res://items/art/Burst Rifle.png" id="1_he8ou"]
+[ext_resource type="Script" uid="uid://x5ha585mx46c" path="res://items/scripts/template_gun_data.gd" id="2_8xqs5"]
+
+[resource]
+script = ExtResource("2_8xqs5")
+bonus_max_ammo = 8
+bonus_max_ammo_bool = true
+bonus_fire_mode = 2
+bonus_fire_mode_bool = true
+bonus_muzzleType = 1
+bonus_muzzleType_bool = true
+bonus_burst_count = 3
+bonus_burst_count_bool = true
+item_name = "Burst Rifle"
+description = "A compact, lightweight Personal Defense Weapon (PDW) designed by FN Herstal in Belgium.
+
+Art stolen from Fortnite."
+icon = ExtResource("1_he8ou")
+category = 1
+durability_trigger = 2
+randomize_stats = true
+metadata/_custom_type_script = "uid://x5ha585mx46c"

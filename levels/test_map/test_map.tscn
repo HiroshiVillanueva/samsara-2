@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bht5xvf8q5kg5"]
+
+[ext_resource type="Script" uid="uid://baac8yc47wuv7" path="res://globals/Level_Behavior.gd" id="1_65nex"]
+[ext_resource type="PackedScene" uid="uid://6d2bduf088uq" path="res://entities/player/Player_Character.tscn" id="2_sny2n"]
+[ext_resource type="Script" uid="uid://cmdbouk8f2sd3" path="res://entities/player/components/camera_rig.gd" id="3_t7d2f"]
+[ext_resource type="Script" uid="uid://fhtatsx8tk5r" path="res://entities/player/components/camera_3d.gd" id="4_os43c"]
+[ext_resource type="Shader" uid="uid://b567f1fl8bni7" path="res://levels/Void.gdshader" id="5_jn1ww"]
+[ext_resource type="Texture2D" uid="uid://cggr7rl0cioqv" path="res://levels/test_map/art/Trees.png" id="6_cs3ir"]
+[ext_resource type="Texture2D" uid="uid://rps15gofs8rq" path="res://levels/test_map/art/Platform.png" id="7_bu2y5"]
+[ext_resource type="Texture2D" uid="uid://5psv2kuxkghd" path="res://levels/test_map/art/Trees_back.png" id="8_khu0x"]
+[ext_resource type="PackedScene" uid="uid://dkixr1wayv36w" path="res://levels/test_map/platform.tscn" id="9_y8wmd"]
+[ext_resource type="PackedScene" uid="uid://dcnix4r50pdi3" path="res://entities/interactables/lootboxes/loot_box_single_item.tscn" id="10_khu0x"]
+[ext_resource type="Resource" uid="uid://b5p5ileoci1rc" path="res://items/resources/Grenade Mk1.tres" id="11_y8wmd"]
+[ext_resource type="PackedScene" uid="uid://das1ee1uc7m3h" path="res://entities/interactables/lootboxes/loot_box_three_item.tscn" id="12_scnsc"]
+[ext_resource type="Script" uid="uid://bid5juuhyayti" path="res://items/scripts/item_data.gd" id="13_tg4os"]
+[ext_resource type="Resource" uid="uid://dsa54avp6tfbl" path="res://items/resources/Assault Rifle.tres" id="14_dg4u2"]
+[ext_resource type="Resource" uid="uid://263ndef4t4f2" path="res://items/resources/Shotgun.tres" id="15_q7kcv"]
+[ext_resource type="Resource" uid="uid://b7kowqtlejlbb" path="res://items/resources/Sniper Rifle.tres" id="16_x5yit"]
+[ext_resource type="Resource" uid="uid://doev6wtuwu0da" path="res://items/resources/Burst Rifle.tres" id="17_y8wmd"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lykcr"]
+sky_top_color = Color(0.41988516, 0.35166374, 0.42693633, 1)
+sky_horizon_color = Color(0.4146089, 0.39755356, 0.4163717, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.4146089, 0.39755356, 0.4163717, 1)
+energy_multiplier = 1.05
+
+[sub_resource type="Sky" id="Sky_jfjko"]
+sky_material = SubResource("ProceduralSkyMaterial_lykcr")
+
+[sub_resource type="Environment" id="Environment_ym4dw"]
+background_mode = 2
+sky = SubResource("Sky_jfjko")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_byo0y"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lykcr"]
+width = 2133
+height = 2129
+noise = SubResource("FastNoiseLite_byo0y")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jfjko"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ym4dw"]
+width = 2355
+height = 2668
+noise = SubResource("FastNoiseLite_jfjko")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lykcr"]
+render_priority = -5
+shader = ExtResource("5_jn1ww")
+shader_parameter/water_color = Color(0, 0, 0, 1)
+shader_parameter/depth_color = Color(0.048484743, 0.0062940163, 0.080323346, 1)
+shader_parameter/foam_color = Color(0.11714392, 0.48862296, 0.4302506, 1)
+shader_parameter/noise_blur = 0.015
+shader_parameter/blur_samples = 8
+shader_parameter/noise_tex_a = SubResource("NoiseTexture2D_lykcr")
+shader_parameter/noise_tex_b = SubResource("NoiseTexture2D_ym4dw")
+shader_parameter/noise_a_speed = 0.05
+shader_parameter/noise_a_dir = Vector2(1, 0.2)
+shader_parameter/noise_a_scale = 10.0
+shader_parameter/noise_a_amount = 0.8
+shader_parameter/noise_a_threshold = 0.85
+shader_parameter/noise_b_speed = 0.1
+shader_parameter/noise_b_dir = Vector2(-0.6, 0.4)
+shader_parameter/noise_b_scale = 20.0
+shader_parameter/noise_b_amount = 0.3
+shader_parameter/noise_b_threshold = 0.75
+shader_parameter/noise_b_opacity = 0.71
+shader_parameter/edge_width = 0.0
+shader_parameter/edge_soft = 0.0
+shader_parameter/edge_anim_speed = 0.0
+shader_parameter/edge_anim_amount = 0.0
+shader_parameter/foam_brightness = 47.085
+shader_parameter/overall_opacity = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_22hbg"]
+size = Vector2(500, 500)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_02m6m"]
+radius = 1.2
+height = 6.82
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_02m6m"]
+radius = 1.2
+height = 6.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f8pur"]
+size = Vector3(1.576416, 2.9751587, 113.681076)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m1pns"]
+size = Vector3(1.576416, 2.9751587, 144.8425)
+
+[node name="Node3D" type="Node3D" unique_id=775013005]
+script = ExtResource("1_65nex")
+
+[node name="Player" parent="." unique_id=846419038 instance=ExtResource("2_sny2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+collision_mask = 46
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=193568791 node_paths=PackedStringArray("target")]
+transform = Transform3D(0.70710677, -0.45451945, 0.5416752, 0, 0.76604444, 0.6427876, -0.70710677, -0.45451945, 0.5416752, 0, 0, 0)
+script = ExtResource("3_t7d2f")
+target = NodePath("../Player")
+follow_speed = 15.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=21859782]
+transform = Transform3D(1, 0, 0, 0, 1.0000002, 2.9802322e-08, 0, 0, 1.0000001, 0, 2.739, 171.298)
+projection = 1
+size = 35.0
+far = 1000.0
+script = ExtResource("4_os43c")
+
+[node name="Environment" type="Node3D" parent="." unique_id=669510432]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=492273671]
+environment = SubResource("Environment_ym4dw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=2131911890]
+transform = Transform3D(0.6754357, 0.63862354, -0.3687094, 2.7805946e-08, 0.49999994, 0.86602545, 0.7374189, -0.58494455, 0.33771777, 0, 66.66518, 0)
+light_specular = 0.0
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Void" type="MeshInstance3D" parent="Environment" unique_id=1440990367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5864471, 0)
+material_override = SubResource("ShaderMaterial_lykcr")
+mesh = SubResource("PlaneMesh_22hbg")
+
+[node name="Enemy Dummy" type="RigidBody3D" parent="." unique_id=1105464367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.046634, 13.886341)
+disable_mode = 2
+collision_layer = 16
+collision_mask = 14
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy Dummy" unique_id=1712979860]
+mesh = SubResource("CapsuleMesh_02m6m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Dummy" unique_id=732546123]
+shape = SubResource("CapsuleShape3D_02m6m")
+
+[node name="Trees Front" type="Sprite3D" parent="." unique_id=350265054]
+transform = Transform3D(2.6763992, -1.7203561, 2.0502408, 0, 2.8994782, 2.4329512, -2.6763992, -1.7203561, 2.0502408, 42.177, 64.089, 52.097)
+texture = ExtResource("6_cs3ir")
+
+[node name="Background" type="Sprite3D" parent="." unique_id=1495846238]
+transform = Transform3D(3.0228815, -1.9430707, 2.3156617, 0, 3.27484, 2.747917, -3.0228815, -1.9430707, 2.3156617, -29.590088, -8.029541, -12.771973)
+render_priority = -1
+texture = ExtResource("7_bu2y5")
+
+[node name="Treesback" type="Sprite3D" parent="." unique_id=1148125067]
+transform = Transform3D(3.1819804, -2.0453374, 2.4375384, 0, 3.4472, 2.892544, -3.1819804, -2.0453374, 2.4375384, -26.37, 0, -10.06)
+texture = ExtResource("8_khu0x")
+
+[node name="Platform" parent="." unique_id=1962483404 instance=ExtResource("9_y8wmd")]
+transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, 2.7077026, 0.2, 0)
+
+[node name="Barrier" type="StaticBody3D" parent="." unique_id=402119590]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrier" unique_id=615670191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.009155, 3.8854294, -6.8012314)
+shape = SubResource("BoxShape3D_f8pur")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Barrier" unique_id=1892648981]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1968079, 3.8854294, 46.56314)
+shape = SubResource("BoxShape3D_m1pns")
+
+[node name="Grenade Loot" parent="." unique_id=540503260 instance=ExtResource("10_khu0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.238536, 1.6503776, -11.850262)
+item_to_give = ExtResource("11_y8wmd")
+
+[node name="Shotgun Loot" parent="." unique_id=585344216 instance=ExtResource("10_khu0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.761464, 1.6503776, -11.850262)
+item_to_give = ExtResource("15_q7kcv")
+
+[node name="Lootbox" parent="." unique_id=1370810610 instance=ExtResource("12_scnsc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.613144, 3.8503814, -6.2169304)
+loot_pool = Array[ExtResource("13_tg4os")]([ExtResource("14_dg4u2"), ExtResource("15_q7kcv"), ExtResource("16_x5yit"), ExtResource("17_y8wmd")])

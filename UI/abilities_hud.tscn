@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b4ino8r7dhhw3"]
+
+[ext_resource type="Script" uid="uid://dmt72vainm2da" path="res://UI/hud/abilities_hud.gd" id="1_y7ewl"]
+[ext_resource type="PackedScene" uid="uid://b6d7q075wtmj" path="res://UI/hud/ability_display.tscn" id="2_y3uj8"]
+
+[node name="AbilitiesHUD" type="VBoxContainer" unique_id=1099585985]
+custom_minimum_size = Vector2(32, 0)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -266.0
+offset_right = 38.0
+offset_bottom = 148.0
+grow_vertical = 2
+theme_override_constants/separation = 7
+script = ExtResource("1_y7ewl")
+ability_display_scene = ExtResource("2_y3uj8")

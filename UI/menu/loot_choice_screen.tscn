@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bfp04pcj7nv6r"]
+
+[ext_resource type="Script" uid="uid://bm2j3jxs23ycj" path="res://UI/menu/loot_choice_screen.gd" id="1_rhj6p"]
+[ext_resource type="PackedScene" uid="uid://kc4clcoyjf1m" path="res://UI/menu/choice_option_screen.tscn" id="2_63ipa"]
+
+[node name="LootChoiceScreen" type="ColorRect" unique_id=1269379589]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -418.0
+offset_top = -265.0
+offset_right = 418.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4558798, 0.6218777, 0.76392055, 1)
+script = ExtResource("1_rhj6p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1967461647]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = -16.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Choice1" parent="HBoxContainer" unique_id=1152589584 instance=ExtResource("2_63ipa")]
+layout_mode = 2
+
+[node name="Choice2" parent="HBoxContainer" unique_id=1755882247 instance=ExtResource("2_63ipa")]
+layout_mode = 2
+
+[node name="Choice3" parent="HBoxContainer" unique_id=1296377211 instance=ExtResource("2_63ipa")]
+layout_mode = 2
+
+[editable path="HBoxContainer/Choice1"]

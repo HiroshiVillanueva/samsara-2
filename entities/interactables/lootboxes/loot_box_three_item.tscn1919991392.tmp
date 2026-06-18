@@ -29,7 +29,6 @@ disable_receive_shadows = true
 
 [node name="Lootbox" type="Area3D" unique_id=1370810610]
 script = ExtResource("1_j3oak")
-loot_pool = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=577436068]
 shape = SubResource("SphereShape3D_twlrt")
@@ -47,7 +46,7 @@ amount = 8
 radial_accel = -2.0
 
 [node name="Logo" type="MeshInstance3D" parent="." unique_id=1631990414]
-transform = Transform3D(1.3493044, 0.35081822, 0.12768738, -1.9058042e-08, 0.47882822, -1.3155696, -0.37333298, 1.2679313, 0.4614893, 0.46657383, 3.6937385, 0.6768509)
+transform = Transform3D(1.7348199, 0.45105207, 0.16416952, -2.45032e-08, 0.61563617, -1.6914463, -0.4799996, 1.6301973, 0.5933433, -0.085984826, 3.6937385, 0.36645615)
 cast_shadow = 0
 mesh = ExtResource("3_yjm8q")
 surface_material_override/0 = SubResource("StandardMaterial3D_1u7nm")
@@ -69,7 +68,7 @@ billboard = 1
 double_sided = false
 render_priority = 1
 outline_render_priority = 0
-text = "[e] pickup"
+text = "[e]"
 font = ExtResource("5_wbsmx")
 font_size = 123
 outline_size = 61

@@ -17,6 +17,8 @@
 [ext_resource type="Resource" uid="uid://263ndef4t4f2" path="res://items/resources/Shotgun.tres" id="15_q7kcv"]
 [ext_resource type="Resource" uid="uid://b7kowqtlejlbb" path="res://items/resources/Sniper Rifle.tres" id="16_x5yit"]
 [ext_resource type="Resource" uid="uid://doev6wtuwu0da" path="res://items/resources/Burst Rifle.tres" id="17_y8wmd"]
+[ext_resource type="Texture2D" uid="uid://co2cpbqcuosbi" path="res://levels/test_map/art/Research Station.png" id="18_tg4os"]
+[ext_resource type="Texture2D" uid="uid://f3jt0781cwkc" path="res://levels/test_map/art/Tent 3.png" id="19_dg4u2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lykcr"]
 sky_top_color = Color(0.41988516, 0.35166374, 0.42693633, 1)
@@ -84,8 +86,8 @@ radius = 1.2
 height = 6.82
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_02m6m"]
-radius = 1.2
-height = 6.8
+radius = 2.036621
+height = 7.887793
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f8pur"]
 size = Vector3(1.576416, 2.9751587, 113.681076)
@@ -141,19 +143,28 @@ axis_lock_angular_z = true
 mesh = SubResource("CapsuleMesh_02m6m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy Dummy" unique_id=732546123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5438962, 0)
 shape = SubResource("CapsuleShape3D_02m6m")
 
+[node name="Research Station" type="Sprite3D" parent="." unique_id=1675854719]
+transform = Transform3D(2.729432, -1.7544451, 2.0908663, 0, 2.9569314, 2.48116, -2.729432, -1.7544451, 2.0908663, 20.80835, 6.46167, -41.817627)
+texture = ExtResource("18_tg4os")
+
+[node name="Tent3" type="Sprite3D" parent="." unique_id=236971429]
+transform = Transform3D(3.4683588, -2.229418, 2.656917, 0, 3.7574482, 3.1528733, -3.4683588, -2.229418, 2.656917, 50.153564, 0, -32.428833)
+texture = ExtResource("19_dg4u2")
+
 [node name="Trees Front" type="Sprite3D" parent="." unique_id=350265054]
-transform = Transform3D(2.6763992, -1.7203561, 2.0502408, 0, 2.8994782, 2.4329512, -2.6763992, -1.7203561, 2.0502408, 42.177, 64.089, 52.097)
+transform = Transform3D(2.6763992, -1.7203557, 2.050241, 0, 2.8994784, 2.4329505, -2.6763992, -1.7203557, 2.050241, 42.177, 64.089, 52.097)
 texture = ExtResource("6_cs3ir")
 
 [node name="Background" type="Sprite3D" parent="." unique_id=1495846238]
-transform = Transform3D(3.0228815, -1.9430707, 2.3156617, 0, 3.27484, 2.747917, -3.0228815, -1.9430707, 2.3156617, -29.590088, -8.029541, -12.771973)
+transform = Transform3D(3.0228815, -1.9430707, 2.3156617, 0, 3.27484, 2.747917, -3.0228815, -1.9430707, 2.3156617, -35.17102, -8.029541, -12.771973)
 render_priority = -1
 texture = ExtResource("7_bu2y5")
 
 [node name="Treesback" type="Sprite3D" parent="." unique_id=1148125067]
-transform = Transform3D(3.1819804, -2.0453374, 2.4375384, 0, 3.4472, 2.892544, -3.1819804, -2.0453374, 2.4375384, -26.37, 0, -10.06)
+transform = Transform3D(3.1819804, -2.0453377, 2.4375381, 0, 3.4472, 2.892544, -3.1819804, -2.0453377, 2.4375381, -26.37, 0, -10.06)
 texture = ExtResource("8_khu0x")
 
 [node name="Platform" parent="." unique_id=1962483404 instance=ExtResource("9_y8wmd")]

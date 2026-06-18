@@ -29,6 +29,7 @@ var base_stats: Dictionary = {}
 ]
 
 const STACKABLE_STATS = [
+	"sweet_spot_window",
 	"max_health",
 	"armor",
 	"speedMultiplier", 
@@ -56,6 +57,7 @@ const STACKABLE_STATS = [
 ]
 
 const OVERRIDE_STATS = [
+	"range_shake_intensity",
 	"dash_buff",
 	"infinite_ammo",
 	"ammo_type",
@@ -152,9 +154,9 @@ func recalculate_player_stats():
 					match typeof(override_value):
 						TYPE_STRING:
 							if override_value != "": should_override = true
-						TYPE_INT, TYPE_BOOL: 
+						TYPE_INT, TYPE_BOOL, TYPE_FLOAT: 
 							if typeof(override_value) == TYPE_BOOL and override_value == true: should_override = true
-							if typeof(override_value) == TYPE_INT: should_override = true
+							if typeof(override_value) == TYPE_INT or typeof(override_value) == TYPE_FLOAT: should_override = true
 							
 					if should_override:
 						_set_stat_on_target(stat_name, override_value)

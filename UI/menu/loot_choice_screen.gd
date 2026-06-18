@@ -29,9 +29,10 @@ func _on_loot_choice_opened(choices: Array[ItemData]):
 		
 		btn.get_node("NameLabel").text = item.item_name
 		btn.get_node("Icon").texture = item.icon
-		btn.get_node("NameLabel").label_settings.font_color = item.get_tier_color()
 		var tier_string = ItemData.Tier.keys()[item.item_tier]
-		btn.get_node("TierLabel").text = "[" + tier_string + "]"
+		btn.get_node("TierLabel").text = "[ " + tier_string + " ]"
+		btn.get_node("TierLabel").modulate = item.get_tier_color()
+		
 		# Show them the durability.
 		if item.durability_trigger != ItemData.DurabilityTrigger.NONE:
 			btn.get_node("DuraLabel").text = "Durability: " + str(item.max_durability)

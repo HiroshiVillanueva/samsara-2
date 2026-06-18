@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5rqay1xrtghi"
-path.s3tc="res://.godot/imported/Platform_Measurements.png-4ae0a10c743c7d06dadf85a19effa785.s3tc.ctex"
+uid="uid://co2cpbqcuosbi"
+path.s3tc="res://.godot/imported/Research Station.png-5497af07e5ba31e137e9a7188169586e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://levels/test_map/art/Platform_Measurements.png"
-dest_files=["res://.godot/imported/Platform_Measurements.png-4ae0a10c743c7d06dadf85a19effa785.s3tc.ctex"]
+source_file="res://levels/test_map/art/Research Station.png"
+dest_files=["res://.godot/imported/Research Station.png-5497af07e5ba31e137e9a7188169586e.s3tc.ctex"]
 
 [params]
 

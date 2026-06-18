@@ -2,9 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://doj4jomx3h34p" path="res://VFX/BinbunVFX/loot_effects/effects/ground/ground_loot_vfx_common.tscn" id="1_hyj10"]
 [ext_resource type="Script" uid="uid://d38orih8d2pvo" path="res://entities/interactables/lootboxes/loot_box_single_item.gd" id="2_npnh2"]
+[ext_resource type="ArrayMesh" uid="uid://cklubitkk0b7r" path="res://items/art/HammerDownLogo.obj" id="3_d6fpo"]
+[ext_resource type="Shader" uid="uid://eaoccnoitnf6" path="res://VFX/Beams/Outline.gdshader" id="4_10gve"]
+[ext_resource type="FontFile" uid="uid://bm4lwgb8oc63d" path="res://common/fonts/THEBOLDFONT-FREEVERSION.otf" id="5_vtfx3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_npnh2"]
 radius = 5.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtfx3"]
+render_priority = 1
+shader = ExtResource("4_10gve")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 0.050000002375
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10gve"]
+render_priority = 1
+next_pass = SubResource("ShaderMaterial_vtfx3")
+transparency = 1
+shading_mode = 2
+specular_mode = 1
+albedo_color = Color(0.8775656, 0.9079078, 0.8485758, 1)
+emission = Color(0.71763813, 0.061474644, 0.16490975, 1)
+ao_enabled = true
+ao_light_affect = 0.43
+disable_receive_shadows = true
 
 [node name="PickupItem" type="Area3D" unique_id=585344216]
 script = ExtResource("2_npnh2")
@@ -14,3 +35,31 @@ shape = SubResource("SphereShape3D_npnh2")
 
 [node name="GroundLootVFX_Common" parent="." unique_id=2071615077 instance=ExtResource("1_hyj10")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="Logo" type="MeshInstance3D" parent="." unique_id=827294801]
+transform = Transform3D(1.3493044, 0.35081822, 0.12768738, -1.9058042e-08, 0.47882822, -1.3155696, -0.37333298, 1.2679313, 0.4614893, -0.018326879, 3.6937385, 0.3019122)
+cast_shadow = 0
+mesh = ExtResource("3_d6fpo")
+surface_material_override/0 = SubResource("StandardMaterial3D_10gve")
+
+[node name="Name" type="Label3D" parent="." unique_id=595805932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.957164, 0.37697124)
+billboard = 1
+double_sided = false
+render_priority = 1
+outline_render_priority = 0
+text = "Name"
+font = ExtResource("5_vtfx3")
+font_size = 192
+outline_size = 61
+
+[node name="Btn" type="Label3D" parent="." unique_id=2015918308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.434792, 0.37697124)
+billboard = 1
+double_sided = false
+render_priority = 1
+outline_render_priority = 0
+text = "[e] pickup"
+font = ExtResource("5_vtfx3")
+font_size = 123
+outline_size = 61

@@ -11,6 +11,12 @@ enum ShootType { RAYCAST, PROJECTILE }
 
 func _init():
 	category = Category.GUN
+	
+@export_category("Active Reload Specs")
+## How wide the "perfect" window is (e.g., 0.15 means 15% of the total reload time)
+@export var sweet_spot_window: float = 0.15
+## How many extra projectiles you get for hitting the active reload
+@export var active_reload_bonus_projectiles: int = 1
 
 @export_group("Ammo Settings")
 @export var bonus_max_ammo: int = 0 ## Default is 100
@@ -22,10 +28,16 @@ func _init():
 @export var bonus_reload_time: float = 0 ## Default is 1.2
 @export var bonus_reload_time_bool: bool = false ## Default is 1.2
 
+@export var reload_sweet_spot_window: float = 0.0 ## Default is 0.15
+@export var reload_sweet_spot_window_bool: bool = false ## Default is 0.15
+
 @export var bonus_ammo_type: String = "Standard" ## Default is "Standard"
 @export var bonus_ammo_type_bool: bool = false ## Default is "Standard"
 
 @export_group("Range Settings")
+@export_range(0.0, 1.0) var range_shake_intensity: float = 0.0 ## Default is 0.15
+@export var range_shake_intensity_bool: bool = false ## Default is 0.15
+
 @export var bonus_fire_mode: FireMode = FireMode.SEMI_AUTO ## Default is "Semi Auto"
 @export var bonus_fire_mode_bool: bool = false ## Default is "Semi Auto"
 

@@ -19,7 +19,7 @@ size = Vector3(162.565, 0.13, 162.565)
 
 [node name="Platform" unique_id=1962483404 instance=ExtResource("1_rl0eo")]
 
-[node name="Cube" parent="." index="0" unique_id=217344106]
+[node name="Cube" parent="." index="0" unique_id=1217192237]
 surface_material_override/0 = SubResource("StandardMaterial3D_rl0eo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=2087244134]

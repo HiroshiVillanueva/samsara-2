@@ -102,8 +102,7 @@ func fire_shot():
 		player.muzzle_flash2.play()
 		if player.fire_mode != player.FireMode.AUTOMATIC:
 			stop_vfx_after_delay(0.15)
-			
-			
+	
 	action_lock_timer = player.action_lock_duration
 	# --- 1. ANIMATION LOGIC ---
 	if player.fire_mode == player.FireMode.BURST:

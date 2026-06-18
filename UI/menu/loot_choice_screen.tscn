@@ -42,3 +42,5 @@ layout_mode = 2
 layout_mode = 2
 
 [editable path="HBoxContainer/Choice1"]
+[editable path="HBoxContainer/Choice2"]
+[editable path="HBoxContainer/Choice3"]

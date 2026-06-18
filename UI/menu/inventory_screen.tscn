@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ca04yvokqp2qi" path="res://UI/menu/inventory_screen.gd" id="1_n51c0"]
 [ext_resource type="PackedScene" uid="uid://cqn37vwds81w5" path="res://UI/menu/inventory_slot.tscn" id="2_nn7do"]
+[ext_resource type="PackedScene" uid="uid://b0eeodkweqke8" path="res://UI/menu/tooltip.tscn" id="3_nn7do"]
 
 [node name="InventoryScreen" type="Control" unique_id=1675036337]
 process_mode = 3
@@ -410,49 +411,14 @@ layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="Tooltip" type="ColorRect" parent="." unique_id=1766980582]
-visible = false
-top_level = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 728.2051
-offset_top = 276.00012
-offset_right = -203.79492
-offset_bottom = -104.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MarginContainer" type="MarginContainer" parent="Tooltip" unique_id=1734239204]
+[node name="Tooltip" parent="." unique_id=1322445343 instance=ExtResource("3_nn7do")]
 layout_mode = 0
-offset_right = 220.0
-offset_bottom = 267.99988
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tooltip/MarginContainer" unique_id=431557929]
-layout_mode = 2
-
-[node name="ItemName" type="Label" parent="Tooltip/MarginContainer/VBoxContainer" unique_id=1169928601]
-z_index = 1
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "testing"
-
-[node name="ItemDesc" type="Label" parent="Tooltip/MarginContainer/VBoxContainer" unique_id=962745517]
-z_index = 1
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-autowrap_mode = 1
-
-[node name="ItemDura" type="Label" parent="Tooltip/MarginContainer/VBoxContainer" unique_id=425983644]
-z_index = 1
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-autowrap_mode = 3
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 200.0
+offset_bottom = 322.0
+grow_horizontal = 1
+grow_vertical = 1

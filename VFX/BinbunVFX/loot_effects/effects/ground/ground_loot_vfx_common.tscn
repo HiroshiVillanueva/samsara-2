@@ -21,7 +21,7 @@ render_priority = 0
 shader = ExtResource("2_gc2pd")
 shader_parameter/primary_color = Color(0.85169774, 0.9698095, 0.983141, 1)
 shader_parameter/secondary_color = Color(0.42899996, 0.6057999, 0.65, 1)
-shader_parameter/emission = 2.0
+shader_parameter/emission = 3.0
 shader_parameter/hue_variation = 0.26
 shader_parameter/align = false
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_j826y")
@@ -55,7 +55,7 @@ render_priority = 0
 shader = ExtResource("3_003iv")
 shader_parameter/primary_color = Color(0.85169774, 0.9698095, 0.983141, 1)
 shader_parameter/secondary_color = Color(0.42899996, 0.6057999, 0.65, 1)
-shader_parameter/emission = 2.0
+shader_parameter/emission = 3.0
 shader_parameter/hue_variation = 0.26
 shader_parameter/flare_streaks = 21.915
 shader_parameter/flare_ring = 0.87
@@ -72,7 +72,7 @@ render_priority = 0
 shader = ExtResource("4_x2v1m")
 shader_parameter/primary_color = Color(0.85169774, 0.9698095, 0.983141, 1)
 shader_parameter/secondary_color = Color(0.42899996, 0.6057999, 0.65, 1)
-shader_parameter/emission = 2.0
+shader_parameter/emission = 1.0
 shader_parameter/hue_variation = 0.26
 shader_parameter/glow_amount = 0.75
 shader_parameter/edge_hardness = 0.94
@@ -88,11 +88,11 @@ rings = 16
 is_hemisphere = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5fkip"]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("2_gc2pd")
 shader_parameter/primary_color = Color(0.85169774, 0.9698095, 0.983141, 1)
 shader_parameter/secondary_color = Color(0.42899996, 0.6057999, 0.65, 1)
-shader_parameter/emission = 2.0
+shader_parameter/emission = 3.0
 shader_parameter/hue_variation = 0.26
 shader_parameter/align = true
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_j826y")
@@ -120,7 +120,7 @@ shader = ExtResource("5_y0ue7")
 shader_parameter/primary_color = Color(0.85169774, 0.9698095, 0.983141, 1)
 shader_parameter/use_texture = false
 shader_parameter/lock = true
-shader_parameter/emission = 2.0
+shader_parameter/emission = 3.0
 
 [sub_resource type="Curve" id="Curve_1x3kk"]
 _data = [Vector2(0, 0), 0.0, 11.307863, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.69508, 0.0, 0, 0]
@@ -174,6 +174,7 @@ size = Vector2(0.15, 0.6)
 script = ExtResource("1_v3gpe")
 primary_color = Color(0.85169774, 0.9698095, 0.983141, 1)
 secondary_color = Color(0.42899996, 0.6057999, 0.65, 1)
+emission = 3.0
 hue_variation = 0.26
 light_color = Color(0.8509804, 0.96862745, 0.9843137, 1)
 density = 0.27
@@ -187,25 +188,27 @@ emission_radius = 0.4
 radial_accel = 0.5
 
 [node name="Ring_01" type="MeshInstance3D" parent="." unique_id=2118051437]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0.1, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0.059226274, 0)
 material_override = SubResource("ShaderMaterial_qisso")
 mesh = SubResource("TorusMesh_2k42s")
 
 [node name="Flare" type="MeshInstance3D" parent="." unique_id=260927669]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.05, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.23158836, 0)
 material_override = SubResource("ShaderMaterial_wh2yj")
 mesh = SubResource("QuadMesh_tnxl5")
 
 [node name="GlowCore" type="MeshInstance3D" parent="." unique_id=1537396459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16593036, 0)
 material_override = SubResource("ShaderMaterial_0sbb8")
 mesh = SubResource("SphereMesh_a71w0")
 
 [node name="Pillar_01" type="MeshInstance3D" parent="." unique_id=809037634]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4626668, 0)
 material_override = SubResource("ShaderMaterial_5fkip")
 mesh = SubResource("CylinderMesh_j4k46")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=878850689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2609618, 0)
 material_override = SubResource("ShaderMaterial_m815l")
 transform_align = 3
 process_material = SubResource("ParticleProcessMaterial_n53ag")

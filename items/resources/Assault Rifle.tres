@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("2_4pk8p")
+camera_shake_intensity = 5.0
 bonus_max_ammo = 30
 bonus_max_ammo_bool = true
 bonus_fire_mode = 1

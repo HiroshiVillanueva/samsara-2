@@ -64,6 +64,7 @@ var current_health: int = 100
 			update_ammo_ui()
 @export var infinite_ammo: bool = false
 @export var reload_time: float = 1.0
+@export var reload_sweet_spot_window: float = 0.15
 @export var ammo_type: String = "Standard" 
 
 var current_ammo: int = 30
@@ -125,6 +126,7 @@ var camera
 @onready var health_bar = $CanvasLayer/HealthBar
 @onready var health_label = $CanvasLayer/HealthBar/HealthLabel
 @onready var reload_bar = $CanvasLayer/ReloadBar
+@onready var sweet_spot_indicator = $CanvasLayer/ReloadBar/SweetSpotIndicator
 @onready var dash_container = $CanvasLayer/DashContainer
 
 # Dash Effects
@@ -255,12 +257,25 @@ func restore_weapons_after_delay(delay_time: float):
 func aim_at_mouse():
 	camera = get_viewport().get_camera_3d()
 	var mouse_pos = get_viewport().get_mouse_position()
-	var floor_plane = Plane(Vector3.UP, global_position.y)
-	
 	var ray_origin = camera.project_ray_origin(mouse_pos)
 	var ray_dir = camera.project_ray_normal(mouse_pos)
-	var intersection = floor_plane.intersects_ray(ray_origin, ray_dir)
 	
+	# 1. Physics check for Layer 5 (Bitmask 16)
+	var space_state = get_world_3d().direct_space_state
+	var ray_end = ray_origin + ray_dir * 2000.0 
+	var query = PhysicsRayQueryParameters3D.create(ray_origin, ray_end, 16)
+	var hit = space_state.intersect_ray(query)
+	
+	# 2. Determine target height based on physics hit or fallback
+	var target_y = global_position.y
+	if hit:
+		target_y = hit.position.y # Use the height of the Layer 5 object
+		
+	# 3. Pure math intersection using the determined height
+	var target_plane = Plane(Vector3.UP, target_y)
+	var intersection = target_plane.intersects_ray(ray_origin, ray_dir)
+
+	# 4. Your original visual/rotation logic, untouched
 	if intersection != null and global_position.distance_to(intersection) > 0.1:
 		var dir_to_mouse = intersection - global_position
 		var attack_point = global_position - dir_to_mouse
@@ -355,6 +370,27 @@ func update_dash_ui(recharge_progress: float = 0.0):
 		else:
 			# Any bar higher than that is totally empty and waiting its turn.
 			bar.value = 0.0
+
+func start_active_reload_ui(total_time: float, spot_start: float, spot_window: float) -> void:
+	# 1. Setup the main progress bar
+	reload_bar.max_value = total_time
+	reload_bar.value = 0
+	reload_bar.show()
+	
+	# 2. Calculate the sweet spot pixel size and position
+	var total_pixel_width = reload_bar.size.x
+	
+	# Position = The starting percentage * Total Pixels
+	sweet_spot_indicator.position.x = spot_start * total_pixel_width
+	
+	# Size = The window percentage * Total Pixels
+	sweet_spot_indicator.size.x = spot_window * total_pixel_width
+	
+	# Make sure the height matches the progress bar perfectly
+	sweet_spot_indicator.size.y = reload_bar.size.y
+	sweet_spot_indicator.position.y = 0 
+	
+	sweet_spot_indicator.show()
 
 # --- ADD THIS TO player.gd ---
 

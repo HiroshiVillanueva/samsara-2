@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://fhtatsx8tk5r" path="res://entities/player/components/camera_3d.gd" id="4_os43c"]
 [ext_resource type="Shader" uid="uid://b567f1fl8bni7" path="res://levels/Void.gdshader" id="5_jn1ww"]
 [ext_resource type="Texture2D" uid="uid://cggr7rl0cioqv" path="res://levels/test_map/art/Trees.png" id="6_cs3ir"]
-[ext_resource type="Texture2D" uid="uid://rps15gofs8rq" path="res://levels/test_map/art/Platform.png" id="7_bu2y5"]
+[ext_resource type="Texture2D" uid="uid://rps15gofs8rq" path="res://levels/test_map/art/Ground.png" id="7_bu2y5"]
 [ext_resource type="Texture2D" uid="uid://5psv2kuxkghd" path="res://levels/test_map/art/Trees_back.png" id="8_khu0x"]
 [ext_resource type="PackedScene" uid="uid://dkixr1wayv36w" path="res://levels/test_map/platform.tscn" id="9_y8wmd"]
 [ext_resource type="PackedScene" uid="uid://dcnix4r50pdi3" path="res://entities/interactables/lootboxes/loot_box_single_item.tscn" id="10_khu0x"]

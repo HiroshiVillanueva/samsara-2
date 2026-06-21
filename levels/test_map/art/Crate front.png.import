@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2hecn7hydt2"
-path="res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"
+uid="uid://bvxmx2ay2rc0x"
+path="res://.godot/imported/Crate front.png-67db6c784c6e596817be1ef8b140c07e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/test_map/art/Platform.png"
-dest_files=["res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"]
+source_file="res://levels/test_map/art/Crate front.png"
+dest_files=["res://.godot/imported/Crate front.png-67db6c784c6e596817be1ef8b140c07e.ctex"]
 
 [params]
 

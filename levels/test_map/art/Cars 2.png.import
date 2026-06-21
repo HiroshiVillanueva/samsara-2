@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2hecn7hydt2"
-path="res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"
+uid="uid://y4miywrph2yq"
+path="res://.godot/imported/Cars 2.png-3000573e26802c9bfa971979d5de5af2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/test_map/art/Platform.png"
-dest_files=["res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"]
+source_file="res://levels/test_map/art/Cars 2.png"
+dest_files=["res://.godot/imported/Cars 2.png-3000573e26802c9bfa971979d5de5af2.ctex"]
 
 [params]
 

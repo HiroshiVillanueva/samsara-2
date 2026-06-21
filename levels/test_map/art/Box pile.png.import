@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2hecn7hydt2"
-path="res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"
+uid="uid://dig5mfbr3hrln"
+path="res://.godot/imported/Box pile.png-44ef3cc045d723660a143af3bf935ca7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/test_map/art/Platform.png"
-dest_files=["res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"]
+source_file="res://levels/test_map/art/Box pile.png"
+dest_files=["res://.godot/imported/Box pile.png-44ef3cc045d723660a143af3bf935ca7.ctex"]
 
 [params]
 

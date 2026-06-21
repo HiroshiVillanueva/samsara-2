@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2hecn7hydt2"
-path="res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"
+uid="uid://ddl7urlevp41b"
+path="res://.godot/imported/Barrier 45 deg.png-210574d57ebf506263131c9cbe5f7fb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/test_map/art/Platform.png"
-dest_files=["res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"]
+source_file="res://levels/test_map/art/Barrier 45 deg.png"
+dest_files=["res://.godot/imported/Barrier 45 deg.png-210574d57ebf506263131c9cbe5f7fb9.ctex"]
 
 [params]
 

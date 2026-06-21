@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2hecn7hydt2"
-path="res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"
+uid="uid://bls3naydc2fjd"
+path="res://.godot/imported/Tent 2.png-1416264e7a3d480488760f079e5ed849.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/test_map/art/Platform.png"
-dest_files=["res://.godot/imported/Platform.png-18f1b5911972e72422d0a30acbd6d2f2.ctex"]
+source_file="res://levels/test_map/art/Tent 2.png"
+dest_files=["res://.godot/imported/Tent 2.png-1416264e7a3d480488760f079e5ed849.ctex"]
 
 [params]
 

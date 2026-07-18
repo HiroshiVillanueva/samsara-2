@@ -13,7 +13,7 @@ func enter():
 	is_active_reload_used = false
 	
 	# Randomize the sweet spot to appear somewhere between 20% and 75% of the bar
-	sweet_spot_start = randf_range(0.2, 0.4)
+	sweet_spot_start = randf_range(0.2, 0.75)
 	
 	# USE THE NEW FUNCTION IN PLAYER_CORE.GD
 	player.start_active_reload_ui(player.reload_time, sweet_spot_start, sweet_spot_window)

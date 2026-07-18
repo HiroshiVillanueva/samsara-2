@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://byxlws2c4dfbs"]
+
+[ext_resource type="Texture2D" uid="uid://y2hecn7hydt2" path="res://levels/test_map/art/Platform.png" id="1_t7jqm"]
+[ext_resource type="Texture2D" uid="uid://cggr7rl0cioqv" path="res://levels/test_map/art/Trees.png" id="2_d665p"]
+[ext_resource type="Texture2D" uid="uid://5psv2kuxkghd" path="res://levels/test_map/art/Trees_back.png" id="3_bsq8b"]
+
+[node name="Spawn Camp" type="Node3D" unique_id=1711279226]
+
+[node name="Reference" type="Sprite3D" parent="." unique_id=1914506878]
+transform = Transform3D(0.70710677, -0.45451945, 0.5416752, 0, 0.76604444, 0.6427876, -0.70710677, -0.45451945, 0.5416752, -57.06543, -46.65686, -63.59839)
+texture = ExtResource("1_t7jqm")
+
+[node name="Sprite3D2" type="Sprite3D" parent="." unique_id=1843734122]
+transform = Transform3D(0.66468036, -0.42724836, 0.50917464, 0, 0.7200817, 0.60422045, -0.66468036, -0.42724836, 0.50917464, 4.2354736, 0, 3.222168)
+texture = ExtResource("2_d665p")
+
+[node name="Sprite3D3" type="Sprite3D" parent="." unique_id=1770574019]
+transform = Transform3D(0.7707464, -0.49542636, 0.5904259, 0, 0.83498836, 0.70063865, -0.7707464, -0.49542636, 0.5904259, -8.957031, -6.7339325, -8.720459)
+texture = ExtResource("3_bsq8b")

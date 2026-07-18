@@ -5,9 +5,6 @@
 [ext_resource type="Script" uid="uid://cmdbouk8f2sd3" path="res://entities/player/components/camera_rig.gd" id="3_t7d2f"]
 [ext_resource type="Script" uid="uid://fhtatsx8tk5r" path="res://entities/player/components/camera_3d.gd" id="4_os43c"]
 [ext_resource type="Shader" uid="uid://b567f1fl8bni7" path="res://levels/Void.gdshader" id="5_jn1ww"]
-[ext_resource type="Texture2D" uid="uid://cggr7rl0cioqv" path="res://levels/test_map/art/Trees.png" id="6_cs3ir"]
-[ext_resource type="Texture2D" uid="uid://rps15gofs8rq" path="res://levels/test_map/art/Ground.png" id="7_bu2y5"]
-[ext_resource type="Texture2D" uid="uid://5psv2kuxkghd" path="res://levels/test_map/art/Trees_back.png" id="8_khu0x"]
 [ext_resource type="PackedScene" uid="uid://dkixr1wayv36w" path="res://levels/test_map/platform.tscn" id="9_y8wmd"]
 [ext_resource type="PackedScene" uid="uid://dcnix4r50pdi3" path="res://entities/interactables/lootboxes/loot_box_single_item.tscn" id="10_khu0x"]
 [ext_resource type="Resource" uid="uid://b5p5ileoci1rc" path="res://items/resources/Grenade Mk1.tres" id="11_y8wmd"]
@@ -17,8 +14,6 @@
 [ext_resource type="Resource" uid="uid://263ndef4t4f2" path="res://items/resources/Shotgun.tres" id="15_q7kcv"]
 [ext_resource type="Resource" uid="uid://b7kowqtlejlbb" path="res://items/resources/Sniper Rifle.tres" id="16_x5yit"]
 [ext_resource type="Resource" uid="uid://doev6wtuwu0da" path="res://items/resources/Burst Rifle.tres" id="17_y8wmd"]
-[ext_resource type="Texture2D" uid="uid://co2cpbqcuosbi" path="res://levels/test_map/art/Research Station.png" id="18_tg4os"]
-[ext_resource type="Texture2D" uid="uid://f3jt0781cwkc" path="res://levels/test_map/art/Tent 3.png" id="19_dg4u2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lykcr"]
 sky_top_color = Color(0.41988516, 0.35166374, 0.42693633, 1)
@@ -89,12 +84,6 @@ height = 6.82
 radius = 2.036621
 height = 7.887793
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f8pur"]
-size = Vector3(1.576416, 2.9751587, 113.681076)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_m1pns"]
-size = Vector3(1.576416, 2.9751587, 144.8425)
-
 [node name="Node3D" type="Node3D" unique_id=775013005]
 script = ExtResource("1_65nex")
 
@@ -146,41 +135,8 @@ mesh = SubResource("CapsuleMesh_02m6m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5438962, 0)
 shape = SubResource("CapsuleShape3D_02m6m")
 
-[node name="Research Station" type="Sprite3D" parent="." unique_id=1675854719]
-transform = Transform3D(2.729432, -1.7544451, 2.0908663, 0, 2.9569314, 2.48116, -2.729432, -1.7544451, 2.0908663, 20.80835, 6.46167, -41.817627)
-texture = ExtResource("18_tg4os")
-
-[node name="Tent3" type="Sprite3D" parent="." unique_id=236971429]
-transform = Transform3D(3.4683588, -2.229418, 2.656917, 0, 3.7574482, 3.1528733, -3.4683588, -2.229418, 2.656917, 50.153564, 0, -32.428833)
-texture = ExtResource("19_dg4u2")
-
-[node name="Trees Front" type="Sprite3D" parent="." unique_id=350265054]
-transform = Transform3D(2.6763992, -1.7203557, 2.050241, 0, 2.8994784, 2.4329505, -2.6763992, -1.7203557, 2.050241, 42.177, 64.089, 52.097)
-texture = ExtResource("6_cs3ir")
-
-[node name="Background" type="Sprite3D" parent="." unique_id=1495846238]
-transform = Transform3D(3.0228815, -1.9430707, 2.3156617, 0, 3.27484, 2.747917, -3.0228815, -1.9430707, 2.3156617, -35.17102, -8.029541, -12.771973)
-render_priority = -1
-texture = ExtResource("7_bu2y5")
-
-[node name="Treesback" type="Sprite3D" parent="." unique_id=1148125067]
-transform = Transform3D(3.1819804, -2.0453377, 2.4375381, 0, 3.4472, 2.892544, -3.1819804, -2.0453377, 2.4375381, -26.37, 0, -10.06)
-texture = ExtResource("8_khu0x")
-
 [node name="Platform" parent="." unique_id=1962483404 instance=ExtResource("9_y8wmd")]
 transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, 2.7077026, 0.2, 0)
-
-[node name="Barrier" type="StaticBody3D" parent="." unique_id=402119590]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Barrier" unique_id=615670191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.009155, 3.8854294, -6.8012314)
-shape = SubResource("BoxShape3D_f8pur")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Barrier" unique_id=1892648981]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.1968079, 3.8854294, 46.56314)
-shape = SubResource("BoxShape3D_m1pns")
 
 [node name="Grenade Loot" parent="." unique_id=540503260 instance=ExtResource("10_khu0x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.238536, 1.6503776, -11.850262)
